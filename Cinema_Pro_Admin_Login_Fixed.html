@@ -1,0 +1,1382 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cinema Pro — منصة الأفلام العربية</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
+*{box-sizing:border-box}body{margin:0;background:#08090b;color:#f5f2eb;font-family:Cairo,sans-serif}button,input{font:inherit}button{cursor:pointer;border:0;color:inherit}.topbar{height:78px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;position:sticky;top:0;z-index:10;background:rgba(8,9,11,.9);backdrop-filter:blur(18px);border-bottom:1px solid #24252a}.brand{display:flex;gap:10px;align-items:center}.brand-mark{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(145deg,#d9b45b,#7b5b1f);font-weight:800}.brand b{display:block;letter-spacing:1.5px}.brand small{color:#8d8e94;font-size:10px}nav{display:flex;gap:8px}.nav-btn{background:transparent;padding:9px 15px;color:#999aa0;border-radius:9px}.nav-btn.active,.nav-btn:hover{color:#fff;background:#17181c}.actions{display:flex;gap:8px}.icon-btn{background:#15161a;border:1px solid #292a2e;border-radius:10px;width:40px;height:40px;font-size:23px}.gold-btn,.primary{background:linear-gradient(135deg,#e1c06a,#9d762a);color:#111;padding:10px 18px;border-radius:10px;font-weight:800}.hero{min-height:570px;margin:18px 4% 0;border-radius:26px;overflow:hidden;position:relative;background:linear-gradient(90deg,#08090b 5%,rgba(8,9,11,.72) 42%,rgba(8,9,11,.05)),url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1800&q=85') center/cover}.hero-content{padding:110px 7%;max-width:670px}.eyebrow,.page-title span,.section-head span{color:#cda94e;font-size:13px}.hero h1{font-size:55px;line-height:1.15;margin:12px 0}.hero h1 em{font-style:normal;color:#d9b75d}.hero p{color:#c2c3c7;line-height:2}.hero-actions{display:flex;gap:12px;margin-top:25px}.ghost{background:#17181c;border:1px solid #33353b;padding:10px 20px;border-radius:10px}.section{padding:45px 5%}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:22px}.section-head h2,.page-title h1{margin:4px 0;font-size:29px}.section-head button{background:transparent;color:#c9a74f}.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}.card{background:#111216;border:1px solid #202126;border-radius:16px;overflow:hidden;transition:.25s;position:relative}.card:hover{transform:translateY(-6px);border-color:#735a28}.poster{width:100%;aspect-ratio:2/3;object-fit:cover;display:block}.card-info{padding:12px}.card h3{font-size:15px;margin:0 0 5px}.meta{color:#777980;font-size:11px}.page{display:none;min-height:80vh}.page.active{display:block}.page-title{padding:55px 5% 25px}.chips{padding:0 5% 25px;display:flex;gap:8px}.chip{background:#141519;border:1px solid #292a2e;border-radius:30px;padding:7px 16px;color:#999}.chip.active{background:#c8a44b;color:#111}.page .grid{padding:0 5% 60px}.back{margin:35px 5%;background:#17181c;padding:9px 17px;border-radius:10px}.detail{margin:10px 5% 70px;display:grid;grid-template-columns:320px 1fr;gap:35px;background:#111216;border:1px solid #24252a;padding:28px;border-radius:24px}.detail img{width:100%;border-radius:16px}.detail h1{font-size:42px;margin:10px 0}.detail p{color:#aaa;line-height:2}.tag{color:#d0ad54}.modal{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:30;display:grid;place-items:center;padding:20px}.hidden{display:none}.modal-card{width:min(650px,100%);background:#111216;border:1px solid #303136;border-radius:20px;padding:25px;position:relative}.modal-card input{width:100%;background:#08090b;border:1px solid #33353b;border-radius:12px;padding:14px;color:white;outline:0}.close{position:absolute;left:18px;top:12px;background:transparent;font-size:28px}.result{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid #27282d}.result img{width:45px;height:65px;object-fit:cover;border-radius:7px}footer{border-top:1px solid #22242a;padding:28px 5%;display:flex;justify-content:space-between;color:#777;font-size:12px}footer b{color:#d0ad54}@media(max-width:900px){nav{display:none}.grid{grid-template-columns:repeat(3,1fr)}.hero{min-height:500px}.hero h1{font-size:42px}.detail{grid-template-columns:1fr}.detail img{max-width:280px}.detail{justify-items:center}}@media(max-width:550px){.grid{grid-template-columns:repeat(2,1fr);gap:10px}.hero{margin:8px 3%;min-height:480px}.hero-content{padding:100px 8% 30px}.hero h1{font-size:34px}.section{padding:30px 4%}.page .grid{padding:0 4% 40px}footer{flex-direction:column;gap:8px}}
+
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at 50% 10%,#29200e,#08090b 48%);color:#fff;font-family:Cairo,Arial,sans-serif}.auth{width:min(430px,92%);background:#111216;border:1px solid #302a1d;border-radius:24px;padding:42px 30px;text-align:center;box-shadow:0 30px 80px #000}.logo{margin:auto;width:70px;height:70px;display:grid;place-items:center;border-radius:20px;background:linear-gradient(145deg,#e0bf64,#806020);color:#111;font-size:38px;font-weight:800}.gold{display:block;color:#d3ae50;letter-spacing:2px;margin-top:15px;font-size:12px}.auth h1{margin:25px 0 5px}.auth p{color:#8e8f94}.auth input{width:100%;margin:18px 0 12px;padding:15px;border-radius:12px;border:1px solid #34353a;background:#08090b;color:#fff;text-align:center;outline:0}.auth button{width:100%;padding:14px;border-radius:12px;border:0;background:linear-gradient(135deg,#e0bf64,#957127);font-weight:800;cursor:pointer}.auth a{display:block;margin:20px;color:#aaa;text-decoration:none}.auth small{color:#d66;display:block}
+*{box-sizing:border-box}body{margin:0;background:#08090b;color:#eee;font-family:Cairo,Arial,sans-serif}header{height:70px;padding:0 5%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #292a2e}header b{color:#d2ad50}header a{color:#aaa;text-decoration:none}main{max-width:950px;margin:40px auto;padding:0 18px}.box{background:#111216;border:1px solid #292a2e;border-radius:18px;padding:25px;margin-bottom:20px}.box h2{margin-top:0}.row{display:flex;gap:10px}.row select,.box input{background:#08090b;color:#fff;border:1px solid #35363b;padding:13px;border-radius:10px;flex:1}.box button{background:#cba84f;color:#111;border:0;border-radius:10px;padding:10px 16px;font-weight:800;cursor:pointer}.new{margin-top:15px;padding:18px;background:#08090b;border:1px dashed #765f29;border-radius:12px;font-size:22px;letter-spacing:2px;display:flex;justify-content:space-between}.code{display:grid;grid-template-columns:1.5fr 1fr .6fr auto auto;gap:10px;align-items:center;padding:14px 0;border-bottom:1px solid #24252a}.on{color:#78c98c}.off{color:#db6d6d}.code button{padding:7px 10px;font-size:12px}.hidden{display:none}@media(max-width:650px){.code{grid-template-columns:1fr 1fr}.code button{width:100%}.row{flex-direction:column}.new{font-size:16px}}
+
+.view-hidden{display:none!important}
+#loginView,#adminView{min-height:100vh}
+.admin-header-placeholder{display:none}
+
+/* ===== Premium Admin Dashboard ===== */
+#adminView{background:
+radial-gradient(circle at 85% 5%,rgba(210,170,70,.13),transparent 28%),
+radial-gradient(circle at 10% 80%,rgba(80,90,130,.08),transparent 25%),#07080a;
+min-height:100vh;color:#f7f3e8}
+#adminView header{height:82px;padding:0 5%;background:rgba(10,11,14,.88);backdrop-filter:blur(18px);border-bottom:1px solid #28251d;position:sticky;top:0;z-index:4}
+#adminView header b{font-size:16px;letter-spacing:1px;color:#e1c36b}
+#adminView header a{background:#17181b;border:1px solid #302f2a;padding:9px 15px;border-radius:10px}
+#adminView main{max-width:1100px;margin:0 auto;padding:42px 20px}
+#adminView .box{background:linear-gradient(145deg,rgba(22,23,27,.96),rgba(12,13,16,.96));border:1px solid #2c2a25;border-radius:22px;padding:28px;box-shadow:0 18px 50px rgba(0,0,0,.22)}
+#adminView .box h2{font-size:23px;margin-bottom:8px}
+#adminView .box p{color:#92939a;line-height:1.9}
+#adminView .box input,#adminView .box select{background:#090a0c!important;color:#fff!important;border:1px solid #37352e!important;padding:14px!important;border-radius:12px!important}
+#adminView .box button{background:linear-gradient(135deg,#e5c66d,#a47c2c)!important;color:#111!important;border-radius:11px!important;box-shadow:0 8px 20px rgba(190,150,50,.12)}
+#adminView #gate{max-width:480px;margin:50px auto;text-align:center}
+#adminView #gate h2:before{content:"C";display:grid;place-items:center;width:58px;height:58px;margin:0 auto 18px;border-radius:17px;background:linear-gradient(145deg,#e5c66d,#8e6824);font-size:30px;font-weight:800}
+#adminView #gate input{width:100%;margin:15px 0 10px}
+#adminView #gate button{width:100%;padding:14px}
+#adminView #panel{display:grid;grid-template-columns:1fr;gap:20px}
+#adminView #panel.hidden{display:none!important}
+#adminView .row{display:grid;grid-template-columns:1fr auto;gap:12px}
+#adminView .new{margin-top:18px;background:#090a0c!important;border:1px dashed #927330!important;border-radius:14px!important;padding:17px!important}
+#adminView .code{background:#0b0c0f;border:1px solid #25262b;border-radius:14px;margin:10px 0;padding:13px 15px;display:grid;grid-template-columns:1.3fr 1fr .7fr auto auto;gap:10px}
+#adminView .code b{color:#e1c36b;letter-spacing:1.5px}
+#adminView .code span{color:#999}
+#adminView .code button{padding:8px 11px!important;font-size:12px}
+#adminView .on{color:#75c88b!important}.off{color:#e07878!important}
+@media(max-width:700px){#adminView .code{grid-template-columns:1fr 1fr}.code b{grid-column:1/-1}.code button{width:100%}}
+
+/* ===== Final mobile/admin polish ===== */
+#adminView .box{overflow:hidden}
+#adminView .code{min-width:0}
+#adminView .code b,#adminView .code span{overflow-wrap:anywhere}
+#adminView #codes:empty{display:none}
+@media(max-width:700px){
+  #adminView main{padding:24px 12px}
+  #adminView header{padding:0 12px}
+  #adminView header>div{gap:5px!important}
+  #adminView header a,#adminView #adminLogout{padding:8px 10px!important;font-size:12px}
+  #adminView .box{padding:18px;border-radius:18px}
+  #adminView .row{grid-template-columns:1fr}
+  #adminView .code{
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+  }
+  #adminView .code b{grid-column:1/-1;font-size:14px}
+  #adminView .code span{font-size:11px}
+  #adminView .code button{width:100%;min-height:38px}
+}
+
+
+/* ===== Final clean admin ordering ===== */
+#adminView #panel{display:grid;grid-template-columns:1fr;gap:20px}
+#adminView #panel.hidden{display:none!important}
+#adminView #panel .box{margin:0}
+#adminView #gate input{display:block;width:100%;margin:10px 0}
+#adminView #gate #unlockBtn{width:100%;margin-top:4px}
+#adminView #newCode:empty{display:none}
+@media(max-width:650px){
+  #adminView #panel.hidden{display:none!important}
+  #adminView main{padding:22px 12px}
+  #adminView .box{padding:18px}
+  #adminView .row{grid-template-columns:1fr!important}
+  #adminView .row button{width:100%}
+  #adminView header{padding:0 12px}
+  #adminView header a,#adminView #adminLogout{padding:8px 10px!important;font-size:12px}
+}
+
+
+/* Copy-code action */
+#adminView .code button{min-height:38px}
+@media(max-width:700px){
+  #adminView .code{grid-template-columns:1fr 1fr!important}
+  #adminView .code button:first-of-type{grid-column:1/-1}
+  #adminView .code button{font-size:12px!important}
+}
+
+
+/* ===== Reliable Copy Button ===== */
+#adminView .copy-code-btn{
+  background:linear-gradient(135deg,#e5c66d,#a47c2c)!important;
+  color:#111!important;
+  font-weight:800;
+}
+@media(max-width:700px){
+  #adminView .copy-code-btn{grid-column:1/-1}
+}
+
+
+/* ===== Subscription expiry countdown ===== */
+.expiry-counter{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  min-height:40px;
+  padding:6px 12px;
+  border:1px solid #5f4b24;
+  border-radius:11px;
+  background:linear-gradient(145deg,rgba(42,35,19,.95),rgba(19,20,23,.95));
+  box-shadow:0 8px 22px rgba(0,0,0,.18);
+  white-space:nowrap;
+}
+.expiry-counter span{font-size:10px;color:#bdbfc5}
+.expiry-counter b{font-size:13px;color:#e4c66d;direction:ltr;letter-spacing:1px}
+.expiry-counter.danger{border-color:#713c35}
+.expiry-counter.danger b{color:#f08a7e}
+@media(max-width:700px){
+  .expiry-counter{padding:5px 8px;gap:5px}
+  .expiry-counter span{font-size:9px}
+  .expiry-counter b{font-size:11px}
+  #platformView .actions{gap:5px}
+  #platformView .icon-btn{width:36px;height:36px}
+  #platformView .gold-btn{padding:8px 10px;font-size:12px}
+}
+@media(max-width:480px){
+  .expiry-counter span{display:none}
+  .expiry-counter{min-width:86px;justify-content:center}
+}
+
+
+/* ===== CINEMA PRO — Premium Animated Login ===== */
+#loginView{
+  position:relative;
+  min-height:100vh;
+  overflow:hidden;
+  display:grid;
+  place-items:center;
+  padding:28px 16px;
+  background:
+    radial-gradient(circle at 50% -10%,rgba(224,191,100,.22),transparent 32%),
+    radial-gradient(circle at 8% 85%,rgba(107,75,25,.16),transparent 28%),
+    radial-gradient(circle at 92% 70%,rgba(86,73,40,.12),transparent 25%),
+    #050609;
+}
+#loginView::before{
+  content:"";
+  position:absolute;
+  inset:-40%;
+  background:
+    conic-gradient(from 0deg,transparent 0 28%,rgba(226,194,103,.08) 32%,transparent 37% 63%,rgba(226,194,103,.06) 67%,transparent 72%);
+  animation:loginAura 18s linear infinite;
+  pointer-events:none;
+}
+#loginView::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:
+    radial-gradient(circle,rgba(255,255,255,.12) 0 1px,transparent 1.5px),
+    radial-gradient(circle,rgba(226,194,103,.13) 0 1px,transparent 1.5px);
+  background-size:110px 110px,170px 170px;
+  background-position:10px 20px,60px 80px;
+  mask-image:linear-gradient(to bottom,transparent,black 20%,black 80%,transparent);
+  animation:starsFloat 14s ease-in-out infinite alternate;
+  pointer-events:none;
+}
+#loginView .auth{
+  position:relative;
+  z-index:2;
+  width:min(440px,94vw);
+  padding:38px 28px 30px;
+  text-align:center;
+  border:1px solid rgba(226,194,103,.25);
+  border-radius:30px;
+  background:
+    linear-gradient(145deg,rgba(25,26,31,.88),rgba(8,9,12,.94));
+  box-shadow:
+    0 35px 100px rgba(0,0,0,.62),
+    inset 0 1px 0 rgba(255,255,255,.06),
+    0 0 70px rgba(206,165,62,.07);
+  backdrop-filter:blur(22px);
+  animation:cardEnter .8s cubic-bezier(.2,.8,.2,1);
+}
+#loginView .auth::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  border-radius:30px;
+  padding:1px;
+  background:linear-gradient(120deg,transparent 15%,rgba(232,202,116,.55),transparent 45%,rgba(232,202,116,.18),transparent 80%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  animation:borderGlow 5s linear infinite;
+  pointer-events:none;
+}
+#loginView .logo{
+  position:relative;
+  width:82px;
+  height:82px;
+  margin:0 auto;
+  border-radius:25px;
+  display:grid;
+  place-items:center;
+  color:#101010;
+  font-size:43px;
+  font-weight:900;
+  background:linear-gradient(145deg,#f0d27a 0%,#c59b3e 50%,#7d5c20 100%);
+  box-shadow:
+    0 16px 40px rgba(191,145,44,.25),
+    inset 0 2px 2px rgba(255,255,255,.45);
+  animation:logoFloat 3.8s ease-in-out infinite;
+}
+#loginView .logo::after{
+  content:"";
+  position:absolute;
+  inset:-10px;
+  border:1px solid rgba(225,194,104,.28);
+  border-radius:30px;
+  animation:logoRing 3s ease-in-out infinite;
+}
+#loginView .gold{
+  display:block;
+  margin-top:18px;
+  color:#e0bd61;
+  font-size:11px;
+  letter-spacing:4px;
+  font-weight:700;
+}
+#loginView .auth h1{
+  margin:22px 0 4px;
+  font-size:36px;
+  font-weight:900;
+  letter-spacing:-1px;
+}
+#loginView .auth p{
+  margin:0 0 25px;
+  color:#8f9198;
+  font-size:14px;
+}
+#loginView .auth input{
+  display:block;
+  width:100%;
+  height:58px;
+  margin:0 0 14px;
+  padding:0 20px;
+  border-radius:15px;
+  border:1px solid #303238;
+  outline:none;
+  background:rgba(3,4,6,.72);
+  color:#fff;
+  text-align:center;
+  font-size:15px;
+  transition:.25s;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.025);
+}
+#loginView .auth input:focus{
+  border-color:#d9b85f;
+  box-shadow:0 0 0 4px rgba(217,184,95,.08),0 10px 30px rgba(0,0,0,.25);
+  transform:translateY(-1px);
+}
+#loginView .auth input::placeholder{color:#676a72}
+#loginView .auth button{
+  position:relative;
+  overflow:hidden;
+  width:100%;
+  height:58px;
+  border-radius:15px;
+  border:0;
+  color:#15120b;
+  font-weight:900;
+  font-size:17px;
+  background:linear-gradient(110deg,#f0d477,#c79d3f,#e6c76d);
+  background-size:220% 100%;
+  box-shadow:0 13px 35px rgba(190,146,46,.2);
+  transition:transform .2s,box-shadow .2s;
+  animation:goldShift 5s ease infinite;
+}
+#loginView .auth button::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-80%;
+  width:55%;
+  height:100%;
+  transform:skewX(-20deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);
+  animation:shine 3.8s ease-in-out infinite;
+}
+#loginView .auth button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 18px 42px rgba(190,146,46,.3);
+}
+#loginView .auth button:active{transform:translateY(1px)}
+#loginView .auth a{
+  display:inline-block;
+  margin:20px 0 4px;
+  color:#a9abb1;
+  font-size:13px;
+  text-decoration:none;
+  transition:.2s;
+}
+#loginView .auth a:hover{color:#e2c36e}
+#loginView .auth small{
+  display:block;
+  min-height:20px;
+  margin-top:8px;
+  color:#e57d73;
+}
+@keyframes loginAura{to{transform:rotate(360deg)}}
+@keyframes starsFloat{from{transform:translate3d(0,0,0)}to{transform:translate3d(18px,-25px,0)}}
+@keyframes cardEnter{from{opacity:0;transform:translateY(28px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes logoFloat{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-7px) rotate(1deg)}}
+@keyframes logoRing{0%,100%{transform:scale(.96);opacity:.35}50%{transform:scale(1.06);opacity:.75}}
+@keyframes borderGlow{to{transform:rotate(360deg)}}
+@keyframes goldShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes shine{0%,35%{left:-80%}65%,100%{left:130%}}
+@media(max-width:480px){
+  #loginView{padding:18px 12px}
+  #loginView .auth{width:100%;padding:32px 20px 25px;border-radius:25px}
+  #loginView .auth h1{font-size:32px}
+  #loginView .logo{width:76px;height:76px;font-size:39px}
+}
+@media(prefers-reduced-motion:reduce){
+  #loginView::before,#loginView::after,#loginView .auth,#loginView .logo,
+  #loginView .logo::after,#loginView .auth::before,#loginView .auth button::before{
+    animation:none!important;
+  }
+}
+
+
+/* ===== CINEMA PRO — Premium Animated Admin ===== */
+#adminView{
+  min-height:100vh;
+  background:
+    radial-gradient(circle at 75% 0%,rgba(224,191,100,.16),transparent 28%),
+    radial-gradient(circle at 10% 80%,rgba(103,74,29,.12),transparent 25%),
+    #050609;
+  position:relative;
+  overflow:hidden;
+}
+#adminView::before{
+  content:"";
+  position:fixed;
+  inset:-45%;
+  background:conic-gradient(from 40deg,transparent 0 30%,rgba(226,194,103,.045) 35%,transparent 41% 68%,rgba(226,194,103,.04) 73%,transparent 80%);
+  animation:adminAura 22s linear infinite;
+  pointer-events:none;
+}
+#adminView header{
+  position:relative;
+  z-index:3;
+  min-height:76px;
+  padding:0 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  border-bottom:1px solid rgba(226,194,103,.16);
+  background:rgba(8,9,12,.82);
+  backdrop-filter:blur(20px);
+  box-shadow:0 12px 35px rgba(0,0,0,.25);
+}
+#adminView header>b{
+  color:#e4c66d;
+  font-size:18px;
+  letter-spacing:.5px;
+}
+#adminView header>div{display:flex;align-items:center;gap:9px}
+#adminView header a{
+  color:#ddd;
+  text-decoration:none;
+  border:1px solid #302f2a;
+  border-radius:11px;
+  padding:9px 14px;
+  background:#111216;
+  transition:.25s;
+}
+#adminView header a:hover{border-color:#d5b45d;color:#e4c66d}
+#adminView #adminLogout{
+  border:1px solid rgba(226,194,103,.2)!important;
+  background:linear-gradient(145deg,#1b1b1f,#0e0f12)!important;
+  transition:.25s;
+}
+#adminView #adminLogout:hover{transform:translateY(-2px);border-color:#d5b45d!important}
+#adminView main{
+  position:relative;
+  z-index:2;
+  width:min(1000px,94vw);
+  margin:0 auto;
+  padding:34px 0 55px;
+}
+#adminView #panel{
+  display:grid;
+  gap:22px;
+}
+#adminView #panel .box,
+#adminView #gate{
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(226,194,103,.18);
+  border-radius:26px;
+  padding:28px;
+  background:linear-gradient(145deg,rgba(25,26,31,.88),rgba(8,9,12,.94));
+  box-shadow:0 25px 70px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.045);
+  backdrop-filter:blur(18px);
+  animation:adminCardIn .65s cubic-bezier(.2,.8,.2,1);
+}
+#adminView #panel .box::before,
+#adminView #gate::before{
+  content:"";
+  position:absolute;
+  width:240px;height:240px;
+  top:-150px;left:-100px;
+  background:radial-gradient(circle,rgba(224,191,100,.12),transparent 68%);
+  animation:adminGlow 6s ease-in-out infinite alternate;
+  pointer-events:none;
+}
+#adminView .box h2{
+  position:relative;
+  margin:0 0 9px;
+  color:#f1eee7;
+  font-size:28px;
+  font-weight:900;
+}
+#adminView .box p{
+  position:relative;
+  margin:0 0 20px;
+  color:#85878e;
+  line-height:1.8;
+}
+#adminView .row{
+  position:relative;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+#adminView select{
+  height:56px;
+  border-radius:14px;
+  border:1px solid #33343a;
+  background:#07080a;
+  color:#eee;
+  padding:0 16px;
+  outline:none;
+}
+#adminView .row button,
+#adminView #createCodeBtn{
+  min-height:56px;
+  border:0;
+  border-radius:14px;
+  color:#15120b;
+  font-size:16px;
+  font-weight:900;
+  background:linear-gradient(110deg,#f0d477,#bd9135,#e5c66d);
+  background-size:220% 100%;
+  box-shadow:0 13px 35px rgba(190,146,46,.18);
+  transition:.25s;
+  animation:goldShift 5s ease infinite;
+}
+#adminView .row button:hover,
+#adminView #createCodeBtn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 18px 42px rgba(190,146,46,.28);
+}
+#adminView #codes{
+  position:relative;
+  display:grid;
+  gap:12px;
+}
+#adminView .code{
+  position:relative;
+  display:grid;
+  grid-template-columns:1.1fr .9fr auto auto auto;
+  align-items:center;
+  gap:10px;
+  padding:16px;
+  border:1px solid #2d2e34;
+  border-radius:18px;
+  background:linear-gradient(145deg,rgba(18,19,23,.95),rgba(8,9,11,.95));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.035);
+  transition:.25s;
+}
+#adminView .code:hover{
+  transform:translateY(-2px);
+  border-color:rgba(226,194,103,.35);
+  box-shadow:0 16px 35px rgba(0,0,0,.28);
+}
+#adminView .code b{color:#e2c36e;font-size:15px;letter-spacing:1px}
+#adminView .code span{color:#aaa; font-size:12px}
+#adminView .code button{
+  min-width:78px;
+  min-height:40px;
+  border-radius:11px;
+  border:1px solid #38383d;
+  background:#141519;
+  color:#ddd;
+  font-weight:800;
+  transition:.2s;
+}
+#adminView .code button:hover{transform:translateY(-1px);border-color:#c7a74f}
+#adminView .code .copy-code-btn{
+  color:#15120b!important;
+  border:0!important;
+  background:linear-gradient(110deg,#f0d477,#c59a3d)!important;
+}
+#adminView #newCode{
+  margin-top:14px;
+  color:#e2c36e;
+  font-weight:900;
+}
+@keyframes adminAura{to{transform:rotate(360deg)}}
+@keyframes adminCardIn{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes adminGlow{from{transform:translate(0,0)}to{transform:translate(120px,70px)}}
+@media(max-width:760px){
+  #adminView header{padding:0 12px}
+  #adminView header>b{font-size:15px}
+  #adminView header a,#adminView #adminLogout{padding:8px 10px!important;font-size:11px}
+  #adminView main{width:94vw;padding:22px 0 40px}
+  #adminView #panel .box,#adminView #gate{padding:21px 17px;border-radius:22px}
+  #adminView .box h2{font-size:24px}
+  #adminView .row{grid-template-columns:1fr}
+  #adminView .code{
+    grid-template-columns:1fr 1fr;
+    gap:9px;
+  }
+  #adminView .code b,
+  #adminView .code span{grid-column:1/-1}
+  #adminView .code button{width:100%;min-width:0}
+  #adminView .code .copy-code-btn{grid-column:1/-1}
+}
+@media(max-width:420px){
+  #adminView header>b{font-size:13px}
+  #adminView header>div{gap:5px}
+  #adminView .box h2{font-size:22px}
+}
+@media(prefers-reduced-motion:reduce){
+  #adminView::before,#adminView #panel .box,#adminView #gate,#adminView #panel .box::before{
+    animation:none!important;
+  }
+}
+
+
+.admin-hero{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:18px;
+  margin-bottom:22px;
+  padding:24px 28px;
+  border:1px solid rgba(226,194,103,.18);
+  border-radius:24px;
+  background:linear-gradient(135deg,rgba(30,27,21,.9),rgba(10,11,14,.92));
+  box-shadow:0 20px 55px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.04);
+  overflow:hidden;
+  animation:adminCardIn .7s cubic-bezier(.2,.8,.2,1);
+}
+.admin-hero::after{
+  content:"";
+  position:absolute;
+  width:300px;height:300px;
+  right:-130px;top:-180px;
+  background:radial-gradient(circle,rgba(226,194,103,.14),transparent 68%);
+  animation:adminGlow 7s ease-in-out infinite alternate;
+}
+.admin-crown{
+  width:58px;height:58px;
+  flex:0 0 58px;
+  display:grid;place-items:center;
+  border-radius:18px;
+  color:#15120b;
+  font-size:28px;
+  background:linear-gradient(145deg,#f0d477,#b98b32);
+  box-shadow:0 12px 30px rgba(190,146,46,.22);
+  animation:logoFloat 3.8s ease-in-out infinite;
+}
+.admin-kicker{
+  color:#c5a14e;
+  font-size:10px;
+  letter-spacing:3px;
+  margin-bottom:3px;
+}
+.admin-hero h1{margin:0;color:#f4f0e8;font-size:30px;font-weight:900}
+.admin-hero p{margin:3px 0 0!important;color:#888b92!important;font-size:13px!important}
+@media(max-width:600px){
+  .admin-hero{padding:18px;gap:12px}
+  .admin-crown{width:48px;height:48px;flex-basis:48px;border-radius:15px}
+  .admin-hero h1{font-size:24px}
+  .admin-kicker{font-size:8px;letter-spacing:2px}
+}
+
+
+/* ===== CINEMA PRO ADMIN — Reference Dashboard ===== */
+#adminView{min-height:100vh;background:#030508;color:#eee;overflow:hidden}
+#adminView .admin-shell{min-height:100vh;display:grid;grid-template-columns:300px minmax(0,1fr);direction:ltr}
+#adminView .admin-sidebar{
+  direction:rtl;position:relative;display:flex;flex-direction:column;
+  min-height:100vh;padding:24px 14px 18px;
+  background:
+    radial-gradient(circle at 50% 72%,rgba(205,150,42,.12),transparent 18%),
+    linear-gradient(180deg,#090b0f,#040609);
+  border-right:1px solid rgba(226,194,103,.17);
+  overflow:hidden;
+}
+#adminView .admin-sidebar:before{
+  content:"";position:absolute;inset:auto -80px 100px -80px;height:260px;
+  background:radial-gradient(ellipse,rgba(226,194,103,.13),transparent 65%);
+  animation:adminGlow 7s ease-in-out infinite alternate;
+}
+#adminView .side-brand{position:relative;display:flex;align-items:center;gap:11px;padding:0 7px 25px;border-bottom:1px solid rgba(255,255,255,.08)}
+#adminView .side-logo{
+  width:58px;height:58px;display:grid;place-items:center;border-radius:17px;
+  color:#111;font-size:31px;font-weight:900;
+  background:linear-gradient(145deg,#f0d477,#bd9136);
+  box-shadow:0 12px 35px rgba(193,145,40,.22),inset 0 2px 2px rgba(255,255,255,.42);
+  animation:logoFloat 4s ease-in-out infinite;
+}
+#adminView .side-brand b{display:block;color:#e7c66a;font-size:16px;letter-spacing:1px}
+#adminView .side-brand small{display:block;color:#777b83;font-size:9px;direction:ltr;text-align:right}
+#adminView .side-nav{position:relative;display:grid;gap:8px;margin-top:25px}
+#adminView .side-item{
+  width:100%;min-height:58px;display:flex;align-items:center;gap:14px;
+  padding:0 18px;border:1px solid rgba(255,255,255,.06);border-radius:13px;
+  background:rgba(9,11,14,.72);color:#c6c7cb;text-align:right;
+  font-size:14px;transition:.25s;
+}
+#adminView .side-item:first-child{color:#e5c86e}
+#adminView .side-item:hover,#adminView .side-item.active{
+  border-color:#c9a54b;
+  background:linear-gradient(100deg,rgba(50,42,25,.75),rgba(12,14,18,.9));
+  color:#f0d477;transform:translateX(2px);
+  box-shadow:inset 3px 0 0 #d7b65e,0 8px 22px rgba(0,0,0,.2);
+}
+#adminView .side-item.side-logout{margin-top:2px;color:#bbb}
+#adminView .side-footer{position:relative;margin-top:auto;text-align:center;color:#777b83;padding-top:24px}
+#adminView .side-movie{font-size:65px;filter:drop-shadow(0 0 18px rgba(226,194,103,.28));margin-bottom:5px}
+#adminView .side-footer>b{display:block;color:#dcb95e;letter-spacing:3px;font-size:14px}
+#adminView .side-footer>span{display:block;font-size:12px;margin:2px 0 14px}
+#adminView .side-footer>small{font-size:9px}
+#adminView .admin-workspace{direction:rtl;min-width:0;background:
+  radial-gradient(circle at 70% 0%,rgba(226,194,103,.07),transparent 25%),
+  #05070a}
+#adminView .admin-top{
+  height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:0 32px;border-bottom:1px solid rgba(226,194,103,.16);
+  background:rgba(6,8,11,.88);backdrop-filter:blur(20px);position:sticky;top:0;z-index:20
+}
+#adminView .admin-user{display:flex;align-items:center;gap:13px;text-align:right}
+#adminView .admin-user small{display:block;color:#b5b5b8;font-size:11px}
+#adminView .admin-user b{display:block;color:#8c8e94;font-size:13px}
+#adminView .admin-crown{
+  width:48px;height:48px;display:grid;place-items:center;border-radius:14px;
+  color:#17130a;font-size:25px;background:linear-gradient(145deg,#f0d477,#b9892e);
+  box-shadow:0 8px 25px rgba(194,147,40,.25)
+}
+#adminView .admin-clock{
+  min-width:365px;display:flex;align-items:center;justify-content:center;gap:13px;
+  padding:7px 15px;border:1px solid rgba(215,177,77,.38);border-radius:17px;
+  background:linear-gradient(145deg,rgba(31,27,18,.95),rgba(9,11,14,.95));
+  box-shadow:0 0 30px rgba(205,155,45,.08),inset 0 1px 0 rgba(255,255,255,.04)
+}
+#adminView .clock-icon{font-size:31px;color:#edc762}
+#adminView .admin-clock small{display:block;color:#d3a942;font-size:9px;text-align:center}
+#adminView .admin-clock b{display:block;color:#f1dfae;font-size:12px;direction:rtl}
+#adminView .mobile-menu{display:none}
+#adminView .admin-content{width:min(100%,1100px);margin:0 auto;padding:25px 28px 45px}
+#adminView #panel{display:grid;gap:20px}
+#adminView .admin-hero{
+  position:relative;min-height:190px;display:grid;place-items:center;overflow:hidden;
+  border:1px solid rgba(226,194,103,.23);border-radius:18px;
+  background:
+    radial-gradient(circle at 50% 30%,rgba(106,135,196,.32),transparent 30%),
+    linear-gradient(180deg,rgba(22,31,54,.96),rgba(6,10,17,.98));
+  box-shadow:0 20px 55px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.05);
+}
+#adminView .admin-hero:after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 55%,rgba(226,194,103,.12),transparent 35%);
+  animation:heroPulse 4s ease-in-out infinite alternate;
+}
+#adminView .hero-curtain{position:absolute;top:-30px;width:32%;height:125%;z-index:1}
+#adminView .hero-curtain.left{left:-5%;background:linear-gradient(90deg,#160709,#5a171b 35%,#25090d 80%,transparent);clip-path:polygon(0 0,100% 0,76% 100%,0 100%);filter:drop-shadow(10px 0 20px rgba(0,0,0,.5))}
+#adminView .hero-curtain.right{right:-5%;background:linear-gradient(270deg,#160709,#5a171b 35%,#25090d 80%,transparent);clip-path:polygon(0 0,100% 0,100% 100%,24% 100%);filter:drop-shadow(-10px 0 20px rgba(0,0,0,.5))}
+#adminView .hero-content{position:relative;z-index:3;text-align:center}
+#adminView .hero-crown{font-size:34px;color:#f0c85c;filter:drop-shadow(0 0 12px rgba(240,200,92,.45));animation:logoFloat 3.5s ease-in-out infinite}
+#adminView .admin-kicker{font-size:9px;letter-spacing:3px;color:#c7a24b;margin-top:3px}
+#adminView .admin-hero h1{margin:2px 0 0;font-size:31px;color:#e9c769}
+#adminView .admin-hero p{margin:3px 0 0;color:#b7b8bd;font-size:13px}
+#adminView .admin-card{
+  position:relative;border:1px solid rgba(226,194,103,.18);border-radius:18px;
+  background:linear-gradient(145deg,rgba(19,21,27,.96),rgba(8,10,13,.98));
+  box-shadow:0 18px 50px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.035);
+  padding:26px;overflow:hidden;
+}
+#adminView .admin-card:before{
+  content:"";position:absolute;width:260px;height:260px;left:-120px;top:-160px;
+  background:radial-gradient(circle,rgba(226,194,103,.1),transparent 68%);
+  animation:adminGlow 6s ease-in-out infinite alternate
+}
+#adminView .create-card{display:grid;grid-template-columns:70px 1fr;column-gap:16px;align-items:center}
+#adminView .card-icon{
+  grid-row:1/3;width:62px;height:62px;display:grid;place-items:center;
+  border-radius:17px;color:#e7bdff;font-size:35px;
+  background:linear-gradient(145deg,rgba(117,62,159,.5),rgba(37,30,58,.8));
+  border:1px solid rgba(190,106,255,.45);box-shadow:0 0 30px rgba(178,76,255,.16)
+}
+#adminView .card-head h2,#adminView .codes-head h2{margin:0;color:#eee;font-size:22px}
+#adminView .card-head p,#adminView .codes-head p{margin:4px 0 17px;color:#858891;font-size:12px}
+#adminView .create-row{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+#adminView .create-row select{
+  height:58px;border:1px solid #30323a;border-radius:13px;background:#0a0c10;color:#ddd;
+  padding:0 16px;outline:none
+}
+#adminView #createCodeBtn{
+  height:58px;border:0;border-radius:13px;color:#fff;font-weight:900;font-size:16px;
+  background:linear-gradient(110deg,#5e42d9,#a72cc7,#f08b82);background-size:220% 100%;
+  box-shadow:0 10px 30px rgba(146,53,200,.2);animation:goldShift 5s ease infinite
+}
+#adminView .codes-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px}
+#adminView .code-search{
+  min-width:250px;height:42px;display:flex;align-items:center;gap:8px;padding:0 14px;
+  border:1px solid #30323a;border-radius:12px;background:#0a0c10;color:#777;font-size:12px
+}
+#adminView .codes-table-head{
+  display:grid;grid-template-columns:1.25fr .75fr 1.1fr .9fr 1.1fr;
+  gap:10px;padding:13px 10px;border-top:1px solid #292b31;border-bottom:1px solid #292b31;
+  color:#d2ad52;font-size:11px;margin-top:5px
+}
+#adminView .code-row{
+  display:grid;grid-template-columns:1.25fr .75fr 1.1fr .9fr 1.1fr;gap:10px;align-items:center;
+  padding:11px 10px;margin-top:8px;border:1px solid #2a2c32;border-radius:13px;
+  background:linear-gradient(145deg,#14161b,#0a0c10);transition:.22s
+}
+#adminView .code-row:hover{transform:translateY(-1px);border-color:#67552d;box-shadow:0 10px 25px rgba(0,0,0,.25)}
+#adminView .code-value b{color:#e3c36c;font-size:13px;letter-spacing:1px}
+#adminView .date-value,#adminView .remaining-value{font-size:11px;color:#c4c5c9}
+#adminView .remaining-value{text-align:center}
+#adminView .remaining-value small{color:#888;font-size:10px}
+#adminView .status-pill{
+  display:inline-flex;align-items:center;gap:6px;padding:5px 9px;border-radius:20px;
+  font-size:10px;font-weight:800;background:rgba(43,108,73,.15);color:#69d59a
+}
+#adminView .status-pill i{width:7px;height:7px;border-radius:50%;background:#55dc8b;box-shadow:0 0 8px #55dc8b}
+#adminView .status-pill.off{background:rgba(195,147,40,.12);color:#e0b94f}
+#adminView .status-pill.off i{background:#e0ad35;box-shadow:none}
+#adminView .status-pill.expired{background:rgba(210,67,57,.12);color:#ff7169}
+#adminView .status-pill.expired i{background:#ff554d;box-shadow:none}
+#adminView .code-actions{display:flex;justify-content:flex-end;gap:6px}
+#adminView .code-actions button{
+  width:39px;height:36px;border-radius:10px;border:1px solid #30323a;background:#15171c;color:#ddd;font-weight:900;transition:.2s
+}
+#adminView .code-actions button:hover{transform:translateY(-2px)}
+#adminView .code-actions .action-copy{border-color:#59499a;color:#d4c9ff}
+#adminView .code-actions .action-toggle{border-color:#69562c;color:#e2bd59}
+#adminView .code-actions .action-delete{border-color:#693531;color:#ef7068}
+#adminView .admin-note{
+  margin-top:15px;padding:11px 14px;border:1px solid #2a3035;border-radius:11px;
+  background:#0c1115;color:#8ea1ab;font-size:11px
+}
+#adminView .empty-codes{text-align:center;padding:35px;color:#777}
+#adminView #newCode .new{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;
+  padding:12px 14px;border:1px solid rgba(226,194,103,.28);border-radius:12px;background:#11130f
+}
+#adminView #newCode .new b{color:#e4c66d;letter-spacing:1px}
+#adminView #newCode .new button{padding:9px 13px;border-radius:9px;background:#d5b45b;color:#111;font-weight:900}
+#adminView .admin-login-box{max-width:520px;margin:70px auto;text-align:center}
+#adminView .admin-login-mark{width:76px;height:76px;margin:0 auto 12px;display:grid;place-items:center;border-radius:22px;color:#15120b;font-size:35px;background:linear-gradient(145deg,#f0d477,#b88930);box-shadow:0 14px 35px rgba(194,147,40,.2)}
+#adminView .admin-login-box h2{margin:8px 0;color:#eee;font-size:30px}
+#adminView .admin-login-box p{color:#858891}
+#adminView .admin-login-box input{display:block;width:100%;height:54px;margin:10px 0;border:1px solid #30323a;border-radius:13px;background:#07090c;color:#fff;padding:0 16px;text-align:center;outline:none}
+#adminView .admin-login-box input:focus{border-color:#d9b85f;box-shadow:0 0 0 4px rgba(217,184,95,.08)}
+#adminView .admin-login-box #unlockBtn{width:100%;height:55px;margin-top:6px;border-radius:13px;background:linear-gradient(110deg,#f0d477,#b88931);color:#15120b;font-weight:900;font-size:16px}
+#adminView .admin-login-box>small{display:block;margin-top:12px;color:#777}
+@keyframes heroPulse{from{opacity:.65;transform:scale(1)}to{opacity:1;transform:scale(1.04)}}
+@media(max-width:900px){
+  #adminView .admin-shell{grid-template-columns:230px minmax(0,1fr)}
+  #adminView .admin-clock{min-width:280px}
+  #adminView .codes-table-head,#adminView .code-row{grid-template-columns:1.2fr .7fr 1fr 1fr}
+  #adminView .codes-table-head span:nth-child(4),#adminView .code-row .remaining-value{display:none}
+}
+@media(max-width:700px){
+  #adminView .admin-shell{display:block}
+  #adminView .admin-sidebar{
+    position:fixed;z-index:50;top:0;bottom:0;left:0;width:275px;
+    transform:translateX(-105%);transition:.3s;box-shadow:20px 0 60px rgba(0,0,0,.55)
+  }
+  #adminView .admin-sidebar.open{transform:translateX(0)}
+  #adminView .admin-top{height:70px;padding:0 12px}
+  #adminView .mobile-menu{display:block;font-size:24px;color:#e2c36e;order:3}
+  #adminView .admin-clock{min-width:0;flex:1;padding:6px 8px}
+  #adminView .clock-icon{font-size:23px}
+  #adminView .admin-clock b{font-size:9px}
+  #adminView .admin-clock small{font-size:7px}
+  #adminView .admin-user{gap:7px}
+  #adminView .admin-user small{font-size:8px}
+  #adminView .admin-user b{font-size:10px}
+  #adminView .admin-crown{width:38px;height:38px;font-size:20px}
+  #adminView .admin-content{padding:14px 11px 30px}
+  #adminView .admin-hero{min-height:165px}
+  #adminView .admin-hero h1{font-size:26px}
+  #adminView .admin-card{padding:18px 14px;border-radius:16px}
+  #adminView .create-card{grid-template-columns:52px 1fr}
+  #adminView .card-icon{width:48px;height:48px;font-size:27px}
+  #adminView .card-head h2,#adminView .codes-head h2{font-size:19px}
+  #adminView .create-row{grid-template-columns:1fr}
+  #adminView .codes-head{display:block}
+  #adminView .code-search{min-width:0;margin-top:10px}
+  #adminView .codes-table-head{display:none}
+  #adminView .code-row{grid-template-columns:1fr 1fr;gap:8px;padding:13px}
+  #adminView .code-value,.adminView .date-value{grid-column:1/-1}
+  #adminView .date-value{grid-column:1/-1}
+  #adminView .code-actions{grid-column:1/-1;justify-content:stretch}
+  #adminView .code-actions button{flex:1}
+}
+
+
+/* ===== Full-screen mobile/desktop layout fix ===== */
+html,body{width:100%;min-width:100%;overflow-x:hidden}
+#loginView,#adminView{width:100%;max-width:none;margin:0}
+#loginView{min-height:100dvh}
+#adminView{min-height:100dvh}
+
+
+/* Hide the admin chrome until the administrator successfully logs in */
+#adminView .admin-shell.admin-locked .admin-sidebar,
+#adminView .admin-shell.admin-locked .admin-top{display:none!important}
+#adminView .admin-shell.admin-locked .admin-workspace{width:100%;min-height:100vh}
+#adminView .admin-shell.admin-locked .admin-content{padding-top:32px}
+
+</style>
+</head>
+<body>
+<div id="loginView"><div class="auth"><div class="logo">C</div><span class="gold">CINEMA PRO</span><h1>أهلاً بك</h1><p class="login-subtitle">تجربة سينمائية راقية تبدأ من هنا</p><input id="code" placeholder="XXXX-XXXX-XXXX" autocomplete="off"><button onclick="adminLogin()">دخول المنصة</button><a href="admin.html">دخول الإدارة</a><small id="msg"></small></div></div>
+<div id="platformView" class="view-hidden">
+<div id="app">
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">C</span><div><b>CINEMA PRO</b><small>سينما عربية راقية</small></div></div>
+    <nav>
+      <button data-page="home" class="nav-btn active">الرئيسية</button>
+      <button data-page="movies" class="nav-btn">الأفلام</button>
+      <button data-page="series" class="nav-btn">المسلسلات</button>
+      <button data-page="anime" class="nav-btn">الأنمي</button>
+    </nav>
+    <div class="actions">
+      <div id="expiryCounter" class="expiry-counter hidden">
+        <span>⏳ متبقي</span>
+        <b id="expiryTime">--:--:--</b>
+      </div>
+      <button class="icon-btn" id="searchBtn">⌕</button>
+      <button class="gold-btn" id="logoutBtn">خروج</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="page active">
+      <div class="hero">
+        <div class="hero-content">
+          <span class="eyebrow">اختيار المحررين</span>
+          <h1>ليلة سينمائية<br><em>تستحق المشاهدة</em></h1>
+          <p>اكتشف أحدث الأفلام والمسلسلات بتجربة عربية أنيقة وسريعة على جميع أجهزتك.</p>
+          <div class="hero-actions">
+            <button class="primary" onclick="openMovie(0)">▶ ابدأ المشاهدة</button>
+            <button class="ghost" onclick="openMovie(0)">التفاصيل</button>
+          </div>
+        </div>
+      </div>
+      <section class="section">
+        <div class="section-head"><div><span>مختارات</span><h2>الأكثر مشاهدة</h2></div><button onclick="showPage('movies')">عرض الكل ←</button></div>
+        <div class="grid" id="featured"></div>
+      </section>
+      <section class="section">
+        <div class="section-head"><div><span>وصل حديثًا</span><h2>أحدث الإضافات</h2></div></div>
+        <div class="grid" id="latest"></div>
+      </section>
+    </section>
+
+    <section id="movies" class="page">
+      <div class="page-title"><span>المكتبة</span><h1>الأفلام</h1></div>
+      <div class="chips"><button class="chip active">الكل</button><button class="chip">أكشن</button><button class="chip">دراما</button><button class="chip">كوميدي</button></div>
+      <div class="grid" id="moviesGrid"></div>
+    </section>
+
+    <section id="series" class="page">
+      <div class="page-title"><span>المكتبة</span><h1>المسلسلات</h1></div>
+      <div class="grid" id="seriesGrid"></div>
+    </section>
+
+    <section id="anime" class="page">
+      <div class="page-title"><span>المكتبة</span><h1>الأنمي</h1></div>
+      <div class="grid" id="animeGrid"></div>
+    </section>
+
+    <section id="details" class="page">
+      <button class="back" onclick="showPage('home')">→ العودة</button>
+      <div id="detailsBox"></div>
+    </section>
+  </main>
+
+  <footer><b>CINEMA PRO</b><span>تجربة مشاهدة عربية راقية</span><span>© 2026</span></footer>
+</div>
+
+<div class="modal hidden" id="searchModal">
+  <div class="modal-card"><button class="close" onclick="closeModal()">×</button><h2>البحث</h2><input id="searchInput" placeholder="ابحث عن فيلم أو مسلسل..." autofocus><div id="searchResults"></div></div>
+</div>
+
+
+</div>
+<div id="adminView" class="view-hidden">
+  <div class="admin-shell">
+
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="side-brand">
+        <div class="side-logo">C</div>
+        <div>
+          <b>CINEMA PRO</b>
+          <small>Your Cinema, Your Way</small>
+        </div>
+      </div>
+
+      <nav class="side-nav">
+        <button class="side-item active" type="button" data-section="dashboard">▦ <span>الرئيسية</span></button>
+        <button class="side-item" type="button" data-section="create">◈ <span>إنشاء كود اشتراك</span></button>
+        <button class="side-item" type="button" data-section="codes">▤ <span>الأكواد الحالية</span></button>
+        <button class="side-item" type="button" data-section="stats">▥ <span>الإحصائيات</span></button>
+        <button class="side-item" type="button" data-section="settings">⚙ <span>الإعدادات</span></button>
+        <button class="side-item side-logout" id="sideLogout" type="button">↪ <span>تسجيل الخروج</span></button>
+      </nav>
+
+      <div class="side-footer">
+        <div class="side-movie">🎬</div>
+        <b>CINEMA PRO</b>
+        <span>لوحة الإدارة</span>
+        <small>© 2025 جميع الحقوق محفوظة</small>
+      </div>
+    </aside>
+
+    <section class="admin-workspace">
+      <header class="admin-top">
+        <div class="mobile-menu" id="mobileAdminMenu">☰</div>
+
+        <div class="admin-clock" id="adminClock">
+          <span class="clock-icon">◷</span>
+          <div>
+            <small>ينتهي الكود بعد:</small>
+            <b id="adminExpiryTime">-- يوم&nbsp;&nbsp;-- ساعة&nbsp;&nbsp;-- دقيقة&nbsp;&nbsp;-- ثانية</b>
+          </div>
+        </div>
+
+        <div class="admin-user">
+          <div>
+            <small>مرحباً بك، المدير</small>
+            <b>admin</b>
+          </div>
+          <div class="admin-crown">♛</div>
+        </div>
+      </header>
+
+      <main class="admin-content">
+
+        <div id="gate" class="box admin-login-box">
+          <div class="admin-login-mark">♛</div>
+          <div class="admin-kicker">CINEMA PRO • CONTROL CENTER</div>
+          <h2>دخول الإدارة</h2>
+          <p>أدخل بيانات المدير للوصول إلى لوحة التحكم.</p>
+          <input id="adminName" placeholder="اسم المستخدم" autocomplete="username">
+          <input id="pass" type="password" placeholder="كلمة السر" autocomplete="current-password">
+          <button id="unlockBtn" type="button">دخول الإدارة</button>
+          <small>مكان مخصص لي المالك فقط</small>
+        </div>
+
+        <div id="panel" class="hidden">
+
+          <section class="admin-hero">
+            <div class="hero-curtain left"></div>
+            <div class="hero-curtain right"></div>
+            <div class="hero-content">
+              <div class="hero-crown">♛</div>
+              <div class="admin-kicker">CINEMA PRO</div>
+              <h1>لوحة الإدارة</h1>
+              <p>إدارة أكواد الاشتراك الخاصة بك بكل سهولة</p>
+            </div>
+          </section>
+
+          <section class="admin-card create-card" id="createSection">
+            <div class="card-icon">◈</div>
+            <div class="card-head">
+              <h2>إنشاء كود اشتراك</h2>
+              <p>اختر مدة الاشتراك ثم اضغط إنشاء كود</p>
+            </div>
+            <div class="create-row">
+              <select id="days">
+                <option value="1">يوم واحد</option>
+                <option value="7">أسبوع واحد</option>
+                <option value="30" selected>شهر واحد</option>
+                <option value="90">3 أشهر</option>
+              </select>
+              <button id="createCodeBtn" type="button">✦ إنشاء كود</button>
+            </div>
+            <div id="newCode"></div>
+          </section>
+
+          <section class="admin-card codes-card" id="codesSection">
+            <div class="codes-head">
+              <div>
+                <h2>الأكواد الحالية</h2>
+                <p>نسخ / تفعيل / تعطيل / حذف الأكواد مع عرض تاريخ الانتهاء</p>
+              </div>
+              <div class="code-search">⌕ <span>ابحث عن كود...</span></div>
+            </div>
+
+            <div class="codes-table-head">
+              <span>الكود</span>
+              <span>الحالة</span>
+              <span>تاريخ الانتهاء</span>
+              <span>الوقت المتبقي</span>
+              <span>إجراءات</span>
+            </div>
+            <div id="codes"></div>
+
+            <div class="admin-note">ⓘ عند انتهاء صلاحية الكود يتم تعطيله تلقائياً ولا يمكن استخدامه.</div>
+          </section>
+
+        </div>
+      </main>
+    </section>
+  </div>
+</div>
+<script>
+const movies=[
+{name:"الليلة الأخيرة",year:2026,genre:"دراما",rate:"8.9",img:"https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=700&q=80",desc:"رحلة درامية مشوقة تبدأ في ليلة واحدة وتكشف أسرارًا لم تكن في الحسبان."},
+{name:"المطاردة",year:2026,genre:"أكشن",rate:"8.6",img:"https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=700&q=80",desc:"مطاردة بلا توقف وسط مدينة لا تنام."},
+{name:"ظل المدينة",year:2025,genre:"جريمة",rate:"8.4",img:"https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=700&q=80",desc:"قصة غامضة عن رجل يحاول كشف الحقيقة."},
+{name:"موعد أخير",year:2025,genre:"رومانسي",rate:"8.1",img:"https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=700&q=80",desc:"حكاية إنسانية عن فرصة أخيرة للحب."},
+{name:"الطريق",year:2026,genre:"مغامرة",rate:"9.0",img:"https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=700&q=80",desc:"مغامرة سينمائية في طريق مجهول."},
+{name:"الساعة صفر",year:2026,genre:"إثارة",rate:"8.7",img:"https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=700&q=80",desc:"كل ثانية تقرّب الأبطال من لحظة الحسم."},
+{name:"المشهد الأخير",year:2025,genre:"دراما",rate:"8.3",img:"https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=700&q=80",desc:"حين ينتهي الفيلم تبدأ الحكاية الحقيقية."},
+{name:"نقطة تحول",year:2026,genre:"أكشن",rate:"8.8",img:"https://images.unsplash.com/photo-1543536448-d209d2d13a1c?auto=format&fit=crop&w=700&q=80",desc:"قرار واحد يغير كل شيء."}
+];
+const series=movies.slice(2,7), anime=movies.slice(1,6);
+const card=(m,i)=>`<article class="card" onclick="openMovie(${i})"><img class="poster" src="${m.img}" alt=""><div class="card-info"><h3>${m.name}</h3><div class="meta">${m.year} • ${m.genre} • ⭐ ${m.rate}</div></div></article>`;
+function fill(id,list){document.getElementById(id).innerHTML=list.map((m,i)=>card(m,i)).join("")}
+fill("featured",movies.slice(0,5));fill("latest",movies.slice(3,8));fill("moviesGrid",movies);fill("seriesGrid",series);fill("animeGrid",anime);
+function showPage(id){document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));document.getElementById(id).classList.add("active");document.querySelectorAll(".nav-btn").forEach(b=>b.classList.toggle("active",b.dataset.page===id))}
+document.querySelectorAll(".nav-btn").forEach(b=>b.onclick=()=>showPage(b.dataset.page));
+function openMovie(i){let m=movies[i%movies.length];document.getElementById("detailsBox").innerHTML=`<div class="detail"><img src="${m.img}"><div><span class="tag">${m.genre} • ${m.year}</span><h1>${m.name}</h1><div>⭐ ${m.rate} / 10</div><p>${m.desc}</p><button class="primary" onclick="alert('أضف رابط المشاهدة الحقيقي من لوحة الإدارة')">▶ مشاهدة الآن</button></div></div>`;showPage("details")}
+const modal=document.getElementById("searchModal");document.getElementById("searchBtn").onclick=()=>{modal.classList.remove("hidden");document.getElementById("searchInput").focus()};
+function closeModal(){modal.classList.add("hidden")}
+document.getElementById("searchInput").oninput=e=>{let q=e.target.value.trim();document.getElementById("searchResults").innerHTML=movies.filter(m=>m.name.includes(q)||m.genre.includes(q)).map((m,i)=>`<div class="result" onclick="closeModal();openMovie(${i})"><img src="${m.img}"><div><b>${m.name}</b><div class="meta">${m.genre} • ${m.year}</div></div></div>`).join("")};
+document.getElementById("logoutBtn").onclick=()=>location.href="login.html";
+
+
+/* ===== Single-file navigation & authentication ===== */
+const loginView=document.getElementById('loginView');
+const platformView=document.getElementById('platformView');
+const adminView=document.getElementById('adminView');
+
+function showView(name){
+  loginView.classList.add('view-hidden');
+  platformView.classList.add('view-hidden');
+  adminView.classList.add('view-hidden');
+  if(name==='login') loginView.classList.remove('view-hidden');
+  if(name==='platform'){
+    platformView.classList.remove('view-hidden');
+    startExpiryCountdown();
+  }
+  if(name==='admin') adminView.classList.remove('view-hidden');
+}
+
+function syncAdminChrome(){
+  const shell=document.querySelector('#adminView .admin-shell');
+  const gate=document.getElementById('gate');
+  if(shell && gate) shell.classList.toggle('admin-locked', !gate.classList.contains('hidden'));
+}
+
+function isValidSession(){
+  const c=localStorage.getItem('cinema_session');
+  const data=JSON.parse(localStorage.getItem('cinema_codes')||'[]');
+  return !!data.find(v=>v.code===c&&!v.disabled&&new Date(v.expires)>new Date());
+}
+
+function adminLogin(){
+  const u=(document.getElementById('adminName')||{}).value||'';
+  const pw=(document.getElementById('pass')||{}).value||'';
+  if(u==='owner2004' && pw==='200429'){
+    localStorage.setItem('cinema_admin','1');
+    showView('owner2004');
+    document.getElementById('gate').classList.add('hidden');
+    document.getElementById('panel').classList.remove('hidden');
+    syncAdminChrome();
+    render();
+  } else {
+    document.getElementById('msg').textContent='اسم المستخدم أو كلمة السر غير صحيحة';
+  }
+}
+function loginSingle(){
+  const c=document.getElementById('code').value.trim();
+  const data=JSON.parse(localStorage.getItem('cinema_codes')||'[]');
+  const x=data.find(v=>v.code===c&&!v.disabled&&new Date(v.expires)>new Date());
+  const msg=document.getElementById('msg');
+  if(!x){
+    msg.textContent='الكود غير صحيح أو منتهي الصلاحية';
+    return;
+  }
+  localStorage.setItem('cinema_session',c);
+  msg.textContent='';
+  showView('platform');
+}
+
+function unlockSingle(){
+  if((document.getElementById('adminName').value==='admin') && (document.getElementById('pass').value==='200429')){
+    document.getElementById('gate').classList.add('hidden');
+    document.getElementById('panel').classList.remove('hidden');
+    syncAdminChrome();
+    render();
+  }else alert('كلمة المرور غير صحيحة');
+}
+
+/* Replace old links/forms with in-page behavior */
+const oldLoginButton=document.querySelector('#loginView .auth button');
+if(oldLoginButton) oldLoginButton.onclick=loginSingle;
+const adminLink=document.querySelector('#loginView .auth a');
+if(adminLink){
+  adminLink.removeAttribute('href');
+  adminLink.onclick=()=>{
+    showView('admin');
+    document.getElementById('gate').classList.remove('hidden');
+    document.getElementById('panel').classList.add('hidden');
+    syncAdminChrome();
+  };
+}
+const adminButton=document.querySelector('#adminView #unlockBtn');
+if(adminButton) adminButton.onclick=unlockSingle;
+const createCodeButton=document.getElementById('createCodeBtn');
+if(createCodeButton) createCodeButton.onclick=createCode;
+const platformLogout=document.getElementById('logoutBtn');
+if(platformLogout) platformLogout.onclick=()=>{
+  localStorage.removeItem('cinema_session');
+  clearInterval(expiryTimer);
+  showView('login');
+};
+
+/* Admin back to platform */
+const adminPlatformLink=document.querySelector('#adminView header a');
+if(adminPlatformLink){
+  adminPlatformLink.removeAttribute('href');
+  adminPlatformLink.onclick=()=>{
+    if(isValidSession()) showView('platform');
+    else showView('login');
+  };
+}
+
+
+/* ===== Fixed Admin Code Generator ===== */
+function loadCodes(){
+  try { return JSON.parse(localStorage.getItem('cinema_codes') || '[]'); }
+  catch(e){ return []; }
+}
+function saveCodes(list){ localStorage.setItem('cinema_codes', JSON.stringify(list)); }
+function makeCode(){
+  const chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  const part=()=>Array.from({length:4},()=>chars[Math.floor(Math.random()*chars.length)]).join('');
+  return part()+'-'+part()+'-'+part();
+}
+function createCode(){
+  const select=document.getElementById('days');
+  const days=Number(select && select.value) || 30;
+  const list=loadCodes();
+  let code=makeCode();
+  while(list.some(x=>x.code===code)) code=makeCode();
+  const expires=new Date(Date.now()+days*86400000).toISOString();
+  list.unshift({code,expires,disabled:false,created:new Date().toISOString(),days});
+  saveCodes(list);
+  const box=document.getElementById('newCode');
+  if(box){
+    box.innerHTML='<div class="new"><b>'+code+'</b><button type="button" onclick="copyCode('+JSON.stringify(code)+')">نسخ الكود</button></div>';
+  }
+  render();
+}
+async function copyCode(code){
+  try{
+    if(navigator.clipboard && window.isSecureContext){
+      await navigator.clipboard.writeText(String(code));
+    }else{
+      const ta=document.createElement('textarea');
+      ta.value=String(code);
+      ta.setAttribute('readonly','');
+      ta.style.position='fixed';
+      ta.style.left='-9999px';
+      ta.style.top='0';
+      document.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      ta.setSelectionRange(0, ta.value.length);
+      const ok=document.execCommand('copy');
+      document.body.removeChild(ta);
+      if(!ok) throw new Error('copy failed');
+    }
+    alert('تم نسخ الكود: '+code);
+  }catch(e){
+    prompt('انسخ الكود من هنا:', String(code));
+  }
+}
+function toggle(i){
+  const list=loadCodes();
+  if(!list[i]) return;
+  list[i].disabled=!list[i].disabled;
+  saveCodes(list); render();
+}
+function del(i){
+  const list=loadCodes();
+  if(!list[i]) return;
+  if(confirm('هل تريد حذف هذا الكود؟')){ list.splice(i,1); saveCodes(list); render(); }
+}
+function render(){
+  const list=loadCodes();
+  const box=document.getElementById('codes');
+  if(!box) return;
+
+  if(!list.length){
+    box.innerHTML='<div class="empty-codes">لا توجد أكواد حالياً — أنشئ أول كود من الأعلى.</div>';
+    return;
+  }
+
+  box.innerHTML=list.map((v,i)=>{
+    const expiresMs=new Date(v.expires).getTime();
+    const remaining=expiresMs-Date.now();
+    const expired=remaining<=0;
+    const active=!v.disabled&&!expired;
+    const status=active?'فعال':(expired?'منتهي':'معطل');
+    const cls=active?'on':(expired?'expired':'off');
+    const total=Math.max(0,Math.floor(remaining/1000));
+    const d=Math.floor(total/86400);
+    const h=Math.floor((total%86400)/3600);
+    const m=Math.floor((total%3600)/60);
+    const left=expired?'منتهي':`${d} يوم<br><small>${String(h).padStart(2,'0')} ساعة</small>`;
+    return `<div class="code-row">
+      <div class="code-value"><b>${v.code}</b></div>
+      <div><span class="status-pill ${cls}"><i></i>${status}</span></div>
+      <div class="date-value">${new Date(v.expires).toLocaleString('ar-EG')}</div>
+      <div class="remaining-value">${left}</div>
+      <div class="code-actions">
+        <button class="action-copy" type="button" onclick="copyCode(${JSON.stringify(v.code)})" title="نسخ">▣</button>
+        <button class="action-toggle" type="button" onclick="toggle(${i})" title="${v.disabled?'تفعيل':'تعطيل'}">${v.disabled?'▶':'Ⅱ'}</button>
+        <button class="action-delete" type="button" onclick="del(${i})" title="حذف">♜</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+
+const adminLogout=document.getElementById('adminLogout');
+if(adminLogout) adminLogout.onclick=()=>{
+  localStorage.removeItem('cinema_admin');
+  clearInterval(adminExpiryTimer);
+  document.getElementById('gate').classList.remove('hidden');
+  document.getElementById('panel').classList.add('hidden');
+  syncAdminChrome();
+  showView('login');
+};
+
+
+
+/* ===== Admin reference-dashboard navigation ===== */
+document.querySelectorAll('#adminView .side-item[data-section]').forEach(btn=>{
+  btn.onclick=()=>{
+    document.querySelectorAll('#adminView .side-item').forEach(x=>x.classList.remove('active'));
+    btn.classList.add('active');
+    const target=btn.dataset.section;
+    if(target==='create') document.getElementById('createSection')?.scrollIntoView({behavior:'smooth',block:'start'});
+    else if(target==='codes') document.getElementById('codesSection')?.scrollIntoView({behavior:'smooth',block:'start'});
+    else if(target==='dashboard') document.getElementById('panel')?.scrollIntoView({behavior:'smooth',block:'start'});
+    document.getElementById('adminSidebar')?.classList.remove('open');
+  };
+});
+const mobileAdminMenu=document.getElementById('mobileAdminMenu');
+if(mobileAdminMenu) mobileAdminMenu.onclick=()=>document.getElementById('adminSidebar')?.classList.toggle('open');
+
+const sideLogout=document.getElementById('sideLogout');
+if(sideLogout) sideLogout.onclick=()=>{
+  localStorage.removeItem('cinema_admin');
+  document.getElementById('gate').classList.remove('hidden');
+  document.getElementById('panel').classList.add('hidden');
+  syncAdminChrome();
+  showView('login');
+};
+
+/* ===== Live subscription expiry countdown ===== */
+let expiryTimer=null;
+
+function getCurrentSubscription(){
+  const code=localStorage.getItem('cinema_session');
+  if(!code) return null;
+  const list=loadCodes();
+  return list.find(v=>v.code===code&&!v.disabled) || null;
+}
+
+function formatRemaining(ms){
+  if(ms<=0) return '00:00:00';
+  let total=Math.floor(ms/1000);
+  const days=Math.floor(total/86400);
+  total%=86400;
+  const hours=Math.floor(total/3600);
+  total%=3600;
+  const mins=Math.floor(total/60);
+  const secs=total%60;
+  const pad=n=>String(n).padStart(2,'0');
+  return days>0
+    ? `${days}ي ${pad(hours)}:${pad(mins)}:${pad(secs)}`
+    : `${pad(hours)}:${pad(mins)}:${pad(secs)}`;
+}
+
+function startExpiryCountdown(){
+  clearInterval(expiryTimer);
+  const badge=document.getElementById('expiryCounter');
+  const out=document.getElementById('expiryTime');
+  const sub=getCurrentSubscription();
+
+  if(!badge||!out||!sub){
+    if(badge) badge.classList.add('hidden');
+    return;
+  }
+
+  badge.classList.remove('hidden');
+
+  const tick=()=>{
+    const remaining=new Date(sub.expires).getTime()-Date.now();
+
+    if(remaining<=0){
+      clearInterval(expiryTimer);
+      badge.classList.add('danger');
+      out.textContent='انتهى';
+      localStorage.removeItem('cinema_session');
+      setTimeout(()=>showView('login'),1200);
+      return;
+    }
+
+    out.textContent=formatRemaining(remaining);
+    badge.classList.toggle('danger',remaining<=86400000);
+  };
+
+  tick();
+  expiryTimer=setInterval(tick,1000);
+}
+
+
+let adminExpiryTimer=null;
+function startAdminExpiry(){
+  clearInterval(adminExpiryTimer);
+  const out=document.getElementById('adminExpiryTime');
+  if(!out) return;
+  const tick=()=>{
+    const code=localStorage.getItem('cinema_session');
+    const list=loadCodes();
+    const sub=list.find(v=>v.code===code&&!v.disabled);
+    if(!sub){
+      out.textContent='لوحة الإدارة • ADMIN';
+      return;
+    }
+    const ms=new Date(sub.expires).getTime()-Date.now();
+    if(ms<=0){out.textContent='انتهى';return;}
+    let sec=Math.floor(ms/1000), d=Math.floor(sec/86400); sec%=86400;
+    let h=Math.floor(sec/3600); sec%=3600;
+    let m=Math.floor(sec/60); sec%=60;
+    out.textContent=`${d} يوم   ${String(h).padStart(2,'0')} ساعة   ${String(m).padStart(2,'0')} دقيقة   ${String(sec).padStart(2,'0')} ثانية`;
+  };
+  tick(); adminExpiryTimer=setInterval(tick,1000);
+}
+startAdminExpiry();
+
+/* Start screen */
+if(localStorage.getItem('cinema_admin')==='1'){ showView('admin'); document.getElementById('gate').classList.add('hidden'); document.getElementById('panel').classList.remove('hidden'); syncAdminChrome(); render(); } else { syncAdminChrome(); showView(isValidSession()?'platform':'login'); }
+</script>
+</body>
+</html>
